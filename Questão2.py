@@ -13,27 +13,46 @@
 
 # Sem if dentro do menu.
 
-def soma(a, b):
+# def soma(a, b):
+#     return a+b
+
+# resultado = soma(10,20)
+# print(resultado)
+
+# def diferenca(a,b):
+#     return a-b
+
+# resultado = diferenca(10,20)
+# print(resultado)
+
+# def multiplica(a,b):
+#     return a * b
+# resultado = multiplica(10,20)
+# print(resultado)
+
+# def div(a,b):
+#     return a/b
+
+# resultado = div(10,20)
+# print(resultado)
+
+#Para a questão, eu compreendi o conceito de uma função pura.
+
+#Agora reorganizando ela para uma maneira mais legível
+
+def soma(a,b):
     return a+b
 
-resultado = soma(10,20)
-print(resultado)
-
-def diferenca(a,b):
+def dif(a,b):
     return a-b
 
-resultado = diferenca(10,20)
-print(resultado)
-
-def multiplica(a,b):
-    return a * b
-resultado = multiplica(10,20)
-print(resultado)
+def multip(a,b):
+    return a*b
 
 def div(a,b):
     return a/b
 
-resultado = div(10,20)
-print(resultado)
-
-#Esse é o conceito de função pura
+print(soma(10,20))
+print(dif(10,20))
+print(multip(10,20))
+print(div(10,20))
