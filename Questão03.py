@@ -26,4 +26,19 @@ def div(a,b):
 num1 = float(input("Digite um número: "))
 num2 = float(input("Digite outro número: "))
 
+operacoes = { #Isso seria praticamente um dicionário de funções 
+    "+": soma,
+    "-": dif,
+    "*": mult,
+    "/": div
+}
+
+operacao = input("Qual operação quer fazer? (+,-,/,*) ?")
+
+if operacao in operacoes: #Esse "in" é de caráter totalmente string, ou seja, se alguma string dentro da operacao estiver em operacoes, o programa consegue selecionar, sem precisar de loopings ou fórmulas.
+    funcao = operacoes[operacao] #Aqui ele seleciona qual é a função
+    resultado = funcao(num1, num2) #Aqui, coloca-se os valores dentro da função.
+    print("Resultado: ",resultado)
+else:
+    print("Operação inválida!")
 
