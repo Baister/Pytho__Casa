@@ -39,19 +39,26 @@ operacoes = {
 }
 #Colocando dentro de um loop infinito
 while True:
+
+    #Saindo ou entrando no loop, reorganizando o fluxo do código.
+    escolha = input("Digite uma operação, (+,-,*,/), caso queira 'sair' digite 'sair': ").lower() #Criando escolha
+
+    if escolha in ("sair", "s"): #Essa é uma forma mais limpa de reescrever a condição
+        print("Finalizando...")
+        break
+    if escolha not in operacoes:
+        print("Operação inválida.")
+        continue
+
     #Criando a leitura dos números
     num1 = float(input("Digite um número: "))
     num2 = float(input("Digite outro número: "))
 
-    escolha = input("Digite uma operação, (+,-,*,/), caso queira 'sair' digite 'sair': ").lower() #Criando escolha
+    #Criando condição e tratamento de erro.
+    if escolha == "/" and num2 == "0":
+        print("Não é possível dividir por zero.")
+    
+    funcao = operacoes[escolha]
+    resultado = funcao(num1, num2)
 
-    #Criando condição e operação
-    if escolha in operacoes:
-        funcao = operacoes[escolha]
-        resultado = funcao(num1, num2)
-        print(f'O resultado de {num1} {escolha} {num2} = {resultado}')
-    elif escolha == 'sair' or escolha == 's':
-        print('finalizando...')
-        break
-    else:
-        print("Favor, digitar uma operação válida!")
+    print(f'{num1} {escolha} {num2} = {resultado}')
